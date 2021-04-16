@@ -188,6 +188,7 @@ if(empty($or_search_terms) && empty($not_search_terms)) {
       <td><div class=\"Results\">";
 		//anazhthsh sthn kentrikh vash - epilogh ths kentrikhs DB
 		mysql_select_db("$mysqlMainDb");
+		$cours_id = intval($cours_id);
 		$myquery = "SELECT * FROM annonces WHERE cours_id = $cours_id AND MATCH (contenu)".$query;
 		$result = db_query($myquery);
 
